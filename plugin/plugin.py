@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+from __future__ import print_function
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
 from Screens.ServiceScan import ServiceScan
@@ -217,18 +220,18 @@ class AZPlayScreen(Screen):
         self.session.nav.playService(None)
         try:
             os.system('/etc/init.d/djmount stop &')
-            print ' >> STOP UPnP'
+            print(' >> STOP UPnP')
         except IOError:
-            print 'Error STOP_UPnP'
+            print('Error STOP_UPnP')
 
         os.popen('killall djmount')
         time.sleep(0.1)
         if config.AZPlay.UPnP_Enable.value == '1':
             try:
                 os.system('/etc/init.d/djmount start &')
-                print ' >> START UPnP'
+                print(' >> START UPnP')
             except IOError:
-                print 'Error START_UPnP'
+                print('Error START_UPnP')
 
         self['actions'] = ActionMap(['OkCancelActions',
          'ShortcutActions',
@@ -325,10 +328,10 @@ class AZPlayScreen(Screen):
             line = tmpfile.readline()
             tmpfile.close()
         except IOError:
-            print 'Error updateMsg'
+            print('Error updateMsg')
         self.session.nav.stopService()
         if int(line[:-1]) == 1:
-            print 'StopService - DONE ! (', self.TestCounter, ')'
+            print('StopService - DONE ! (', self.TestCounter, ')')
             self['start_progress'].setValue(100)
             self.onLayoutFinish.append(self.keyGo)
             self.DVBCATimer1 = eTimer()
@@ -438,7 +441,7 @@ class AZPlayScreen(Screen):
             try:
                 f.write(data)
             except Exception as e:
-                print e
+                print(e)
             finally:
                 f.close()
 
@@ -446,13 +449,13 @@ class AZPlayScreen(Screen):
             try:
                 data = f.decode(enc)
             except Exception:
-                print 'nok'
+                print('nok')
 
             f = open('/tmp/tmp.srt', 'w')
             try:
                 f.write(data.encode('utf-8'))
             except Exception as e:
-                print e
+                print(e)
             finally:
                 f.close()
 
@@ -503,7 +506,7 @@ class AZPlayScreen(Screen):
                     f.close()
 
             except Exception as e:
-                print e
+                print(e)
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -528,7 +531,7 @@ class AZPlayScreen(Screen):
                     f.close()
 
             except Exception as e:
-                print e
+                print(e)
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -561,7 +564,7 @@ class AZPlayScreen(Screen):
                         f.close()
 
                 except Exception as e:
-                    print e
+                    print(e)
 
                 if os.path.exists('/tmp/rmfp.in2'):
                     break
@@ -579,7 +582,7 @@ class AZPlayScreen(Screen):
                     f.close()
 
             except Exception as e:
-                print e
+                print(e)
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -602,7 +605,7 @@ class AZPlayScreen(Screen):
                     f.close()
 
             except Exception as e:
-                print e
+                print(e)
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -633,9 +636,9 @@ class AZPlayScreen(Screen):
             azplay_vctrl.volumeDialog.setValue(value)
         try:
             os.system('/etc/init.d/djmount stop &')
-            print ' >> STOP UPnP'
+            print(' >> STOP UPnP')
         except IOError:
-            print 'Error STOP_UPnP'
+            print('Error STOP_UPnP')
 
         self.close()
 
@@ -643,22 +646,22 @@ class AZPlayScreen(Screen):
         frontend = None
         resource_manager = eDVBResourceManager.getInstance()
         if resource_manager is None:
-            print 'get resource manager instance failed'
+            print('get resource manager instance failed')
         else:
             self.raw_channel = resource_manager.allocateRawChannel(self.feid)
             if self.raw_channel is None:
-                print 'allocateRawChannel failed'
+                print('allocateRawChannel failed')
             else:
                 frontend = self.raw_channel.getFrontend()
                 if frontend is None:
-                    print 'getFrontend failed'
+                    print('getFrontend failed')
         return frontend
 
     def Konfig(self):
         self.session.openWithCallback(self.ClBackCfg, AZPlayConfig)
 
     def ClBackCfg(self, komanda = None):
-        print '-'
+        print('-')
         if komanda == 'ok':
             self['list_left'].changeDir('/media/')
             self['text'].setText('/media/')
@@ -744,7 +747,7 @@ class HideScr(Screen):
                         f.close()
 
                 except Exception as e:
-                    print e
+                    print(e)
 
                 if os.path.exists('/tmp/rmfp.cmd2'):
                     break
@@ -774,7 +777,7 @@ class HideScr(Screen):
                     f.close()
 
             except Exception as e:
-                print e
+                print(e)
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -813,7 +816,7 @@ class HideScr(Screen):
                     f.close()
 
             except Exception as e:
-                print e
+                print(e)
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -856,16 +859,16 @@ class HideScr(Screen):
                     ipos = line.find('Video Streams count:')
                     if ipos >= 0:
                         ino = int(lines[lno][ipos + 20:-1])
-                        print 'broj na Video strimovi:', ino
+                        print('broj na Video strimovi:', ino)
                         for n in range(0, ino):
-                            print lines[lno + n + 1][:-1]
+                            print(lines[lno + n + 1][:-1])
 
                     ipos = line.find('Audio Streams count:')
                     if ipos >= 0:
                         ino = int(lines[lno][ipos + 20:-1])
-                        print 'No Of Audio streams:', ino
+                        print('No Of Audio streams:', ino)
                         for n in range(0, ino):
-                            print lines[lno + n + 1][:-1]
+                            print(lines[lno + n + 1][:-1])
                             tmpstr = lines[lno + n + 1][:-1]
                             ipos = tmpstr.find('ID')
                             if ipos >= 0:
@@ -875,9 +878,9 @@ class HideScr(Screen):
                     ipos = line.find('Subtitles Streams count:')
                     if ipos >= 0:
                         ino = int(lines[lno][ipos + 24:-1])
-                        print 'No Of Subtitles streams:', ino
+                        print('No Of Subtitles streams:', ino)
                         for n in range(0, ino):
-                            print lines[lno + n + 1][:-1]
+                            print(lines[lno + n + 1][:-1])
                             tmpstr = lines[lno + n + 1][:-1]
                             ipos = tmpstr.find('ID')
                             if ipos >= 0:
@@ -892,7 +895,7 @@ class HideScr(Screen):
 
                 break
             except Exception:
-                print 'Error GetInfo'
+                print('Error GetInfo')
 
             time.sleep(0.1)
 
@@ -1091,7 +1094,7 @@ class HideScr(Screen):
                     f.close()
 
             except Exception as e:
-                print e
+                print(e)
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -1218,7 +1221,7 @@ class HideScr(Screen):
 
     def ClBackCfg(self, komanda = None):
         if komanda == 'ok' and self.MediaFType == 'video':
-            print 'ClBackCfg - return'
+            print('ClBackCfg - return')
 
     def SendCMD2(self, k1, k2):
         if k1 >= 0:
@@ -1246,7 +1249,7 @@ class HideScr(Screen):
                         f.close()
 
                 except Exception as e:
-                    print e
+                    print(e)
 
                 if os.path.exists('/tmp/rmfp.in2'):
                     break
@@ -1264,7 +1267,7 @@ class HideScr(Screen):
                     f.close()
 
             except Exception as e:
-                print e
+                print(e)
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -1370,7 +1373,7 @@ class AZInfoBar(Screen):
                         f.close()
 
                 except Exception as e:
-                    print e
+                    print(e)
 
                 if os.path.exists('/tmp/rmfp.in2'):
                     break
@@ -1386,7 +1389,7 @@ class AZInfoBar(Screen):
                         f.close()
 
                 except Exception as e:
-                    print e
+                    print(e)
 
                 if os.path.exists('/tmp/rmfp.cmd2'):
                     break
@@ -1521,7 +1524,7 @@ class AZInfoBar(Screen):
                     f.close()
 
             except Exception as e:
-                print e
+                print(e)
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -1540,7 +1543,7 @@ class AZInfoBar(Screen):
                 self.length = str(datetime.timedelta(seconds=self.sec2))
                 break
             except Exception:
-                print 'Error updateMsg'
+                print('Error updateMsg')
 
             time.sleep(0.1)
 
@@ -1609,7 +1612,7 @@ class LoadSub(Screen):
                 self.close(playfile)
 
     def keyBlue(self):
-        print 'OK'
+        print('OK')
 
     def quit(self):
         self.close('empty')
@@ -1701,16 +1704,16 @@ class AZPlayConfig(ConfigListScreen, Screen):
             if config.AZPlay.UPnP_Enable.value == '1':
                 try:
                     os.system('/etc/init.d/djmount start &')
-                    print ' >> START UPnP'
+                    print(' >> START UPnP')
                 except IOError:
-                    print 'Error START_UPnP'
+                    print('Error START_UPnP')
 
             else:
                 try:
                     os.system('/etc/init.d/djmount stop &')
-                    print ' >> STOP UPnP'
+                    print(' >> STOP UPnP')
                 except IOError:
-                    print 'Error STOP_UPnP'
+                    print('Error STOP_UPnP')
 
         self.ExtSub_Size_old = config.AZPlay.ExtSub_Size.value
         self.ExtSub_Position_old = config.AZPlay.ExtSub_Position.value
@@ -1769,16 +1772,16 @@ class AZPlayConfig(ConfigListScreen, Screen):
             if config.AZPlay.UPnP_Enable.value == '1':
                 try:
                     os.system('/etc/init.d/djmount start &')
-                    print ' >> START UPnP'
+                    print(' >> START UPnP')
                 except IOError:
-                    print 'Error START_UPnP'
+                    print('Error START_UPnP')
 
             else:
                 try:
                     os.system('/etc/init.d/djmount stop &')
-                    print ' >> STOP UPnP'
+                    print(' >> STOP UPnP')
                 except IOError:
-                    print 'Error STOP_UPnP'
+                    print('Error STOP_UPnP')
 
         self.close()
 
