@@ -441,7 +441,7 @@ class AZPlayScreen(Screen):
             try:
                 f.write(data)
             except Exception as e:
-                print(e)
+                print(str(e))
             finally:
                 f.close()
 
@@ -455,7 +455,7 @@ class AZPlayScreen(Screen):
             try:
                 f.write(data.encode('utf-8'))
             except Exception as e:
-                print(e)
+                print(str(e))
             finally:
                 f.close()
 
@@ -506,7 +506,7 @@ class AZPlayScreen(Screen):
                     f.close()
 
             except Exception as e:
-                print(e)
+                print(str(e))
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -531,7 +531,7 @@ class AZPlayScreen(Screen):
                     f.close()
 
             except Exception as e:
-                print(e)
+                print(str(e))
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -564,7 +564,7 @@ class AZPlayScreen(Screen):
                         f.close()
 
                 except Exception as e:
-                    print(e)
+                    print(str(e))
 
                 if os.path.exists('/tmp/rmfp.in2'):
                     break
@@ -582,7 +582,7 @@ class AZPlayScreen(Screen):
                     f.close()
 
             except Exception as e:
-                print(e)
+                print(str(e))
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -605,7 +605,7 @@ class AZPlayScreen(Screen):
                     f.close()
 
             except Exception as e:
-                print(e)
+                print(str(e))
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -747,7 +747,7 @@ class HideScr(Screen):
                         f.close()
 
                 except Exception as e:
-                    print(e)
+                    print(str(e))
 
                 if os.path.exists('/tmp/rmfp.cmd2'):
                     break
@@ -777,7 +777,7 @@ class HideScr(Screen):
                     f.close()
 
             except Exception as e:
-                print(e)
+                print(str(e))
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -816,7 +816,7 @@ class HideScr(Screen):
                     f.close()
 
             except Exception as e:
-                print(e)
+                print(str(e))
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -1094,7 +1094,7 @@ class HideScr(Screen):
                     f.close()
 
             except Exception as e:
-                print(e)
+                print(str(e))
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -1249,7 +1249,7 @@ class HideScr(Screen):
                         f.close()
 
                 except Exception as e:
-                    print(e)
+                    print(str(e))
 
                 if os.path.exists('/tmp/rmfp.in2'):
                     break
@@ -1267,7 +1267,7 @@ class HideScr(Screen):
                     f.close()
 
             except Exception as e:
-                print(e)
+                print(str(e))
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
@@ -1373,7 +1373,7 @@ class AZInfoBar(Screen):
                         f.close()
 
                 except Exception as e:
-                    print(e)
+                    print(str(e))
 
                 if os.path.exists('/tmp/rmfp.in2'):
                     break
@@ -1389,7 +1389,7 @@ class AZInfoBar(Screen):
                         f.close()
 
                 except Exception as e:
-                    print(e)
+                    print(str(e))
 
                 if os.path.exists('/tmp/rmfp.cmd2'):
                     break
@@ -1524,7 +1524,7 @@ class AZInfoBar(Screen):
                     f.close()
 
             except Exception as e:
-                print(e)
+                print(str(e))
 
             if os.path.exists('/tmp/rmfp.cmd2'):
                 break
