@@ -1327,7 +1327,7 @@ class AZInfoBar(Screen):
         self['media_progress'] = ProgressBar()
         self['pozadina'] = Pixmap()
         self.msgno = 0
-        self['infoA'].setText('0:00:00 // 0:00:00')
+        self['infoA'].setText('0:00:00 / 0:00:00')
         self['infoB'].setText('0:00:00')
         self['infoC'].setText(self.info2)
         self['infoD'].setText(str(self.info4))
@@ -1409,14 +1409,14 @@ class AZInfoBar(Screen):
         if self.IMod == 1:
             self.skok = 1
             self.pozic = self.vreme1 * 100 // self.vreme2
-            self.position = str(datetime.timedelta(seconds=self.vreme1)) + ' // ' + str(datetime.timedelta(seconds=int(self.vreme2 - self.vremeT)))
+            self.position = str(datetime.timedelta(seconds=self.vreme1)) + ' / ' + str(datetime.timedelta(seconds=int(self.vreme2 - self.vremeT)))
             self.length = str(datetime.timedelta(seconds=self.vreme2))
             self['media_progress'].setValue(self.pozic)
             self['infoA'].setText(self.position)
             self['infoB'].setText(self.length)
         if self.IMod == 2:
             self.NoLoop = 0
-            self.position = '0:00:00 // 0:00:00'
+            self.position = '0:00:00 / 0:00:00'
             self.length = '0:00:00'
             self['media_progress'].setValue(0)
             self['infoA'].setText(self.position)
@@ -1429,7 +1429,7 @@ class AZInfoBar(Screen):
             self.msgTimer.start(10, True)
         if self.IMod == 3:
             self.NoLoop = 0
-            self.position = '0:00:00 // 0:00:00'
+            self.position = '0:00:00 / 0:00:00'
             self.length = '0:00:00'
             self['media_progress'].setValue(0)
             self['infoA'].setText(self.position)
@@ -1499,7 +1499,7 @@ class AZInfoBar(Screen):
         else:
             self.pozic = 0
             return
-        self.position = str(datetime.timedelta(seconds=self.vreme1)) + ' // ' + str(datetime.timedelta(seconds=int(self.vreme2 - self.vreme1)))
+        self.position = str(datetime.timedelta(seconds=self.vreme1)) + ' / ' + str(datetime.timedelta(seconds=int(self.vreme2 - self.vreme1)))
         self.length = str(datetime.timedelta(seconds=self.vreme2))
         self['media_progress'].setValue(self.pozic)
         self['infoA'].setText(self.position)
@@ -1539,7 +1539,7 @@ class AZInfoBar(Screen):
                 os.remove('/tmp/rmfp.out2')
                 self.sec1 = int(line[1]) // 1000
                 self.sec2 = int(line[0]) // 1000
-                self.position = str(datetime.timedelta(seconds=self.sec1)) + ' // ' + str(datetime.timedelta(seconds=int(self.sec2 - self.sec1)))
+                self.position = str(datetime.timedelta(seconds=self.sec1)) + ' / ' + str(datetime.timedelta(seconds=int(self.sec2 - self.sec1)))
                 self.length = str(datetime.timedelta(seconds=self.sec2))
                 break
             except Exception:
