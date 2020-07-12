@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from __future__ import print_function
+from __future__ import division, print_function
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
 from Screens.ServiceScan import ServiceScan
@@ -938,11 +938,11 @@ class HideScr(Screen):
     def GetFileSize(self, pateka):
         tmp = os.stat(pateka).st_size
         if tmp // 1073741824 > 0:
-            info3 = str(tmp // 107374182.4 / 10) + 'GB'
+            info3 = str(tmp // 107374182.4 // 10) + 'GB'
         elif tmp // 1048576 > 0:
-            info3 = str(tmp // 104857.6 / 10) + 'MB'
+            info3 = str(tmp // 104857.6 // 10) + 'MB'
         elif tmp // 1024 > 0:
-            info3 = str(tmp // 102.4 / 10) + 'kB'
+            info3 = str(tmp // 102.4 // 10) + 'kB'
         else:
             info3 = str(tmp) + 'B'
         return info3
