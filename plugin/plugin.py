@@ -922,12 +922,12 @@ class HideScr(Screen):
         if cmd > 0:
             self.SendCMD2(-1, cmd)
         if config.AZPlay.lastFile.value == self.MediaFileName:
-            self.session.openWithCallback(self.ResumeConfirmed, MessageBox, _('Last position = ' + str(datetime.timedelta(seconds=long(config.AZPlay.lastPosition.value))) + '\n\nResume ?'), timeout=5)
+            self.session.openWithCallback(self.ResumeConfirmed, MessageBox, _('Last position = ' + str(datetime.timedelta(seconds=int(config.AZPlay.lastPosition.value))) + '\n\nResume ?'), timeout=5)
 
     def ResumeConfirmed(self, yesno):
         if yesno:
             self.GetSec1()
-            sec3 = long(config.AZPlay.lastPosition.value)
+            sec3 = int(config.AZPlay.lastPosition.value)
             if sec3 > 0 and sec3 < self.sec2:
                 time.sleep(0.11)
                 self.SendCMD2(sec3, 106)
