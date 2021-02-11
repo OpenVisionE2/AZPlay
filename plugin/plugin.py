@@ -111,8 +111,7 @@ except KeyError:
 
 mtime = os.stat(path).st_mtime
 if mtime != cached_mtime:
-    list = os.listdir(path)
-    list.sort()
+    list = sorted(os.listdir(path))
 cache[path] = (mtime, list)
 n = 0
 for fontchk in list:
