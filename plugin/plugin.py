@@ -659,7 +659,7 @@ class AZPlayScreen(Screen):
     def Konfig(self):
         self.session.openWithCallback(self.ClBackCfg, AZPlayConfig)
 
-    def ClBackCfg(self, komanda = None):
+    def ClBackCfg(self, komanda=None):
         print('-')
         if komanda == 'ok':
             self['list_left'].changeDir('/media/')
@@ -1218,7 +1218,7 @@ class HideScr(Screen):
             return
         self.session.openWithCallback(self.ClBackCfg, AZPlaySelectSub, self.SubtitlesL)
 
-    def ClBackCfg(self, komanda = None):
+    def ClBackCfg(self, komanda=None):
         if komanda == 'ok' and self.MediaFType == 'video':
             print('ClBackCfg - return')
 
@@ -1629,7 +1629,7 @@ class AZPlayConfig(ConfigListScreen, Screen):
         </screen>
         """
 
-    def __init__(self, session, args = None):
+    def __init__(self, session, args=None):
         Screen.__init__(self, session)
         Screen.setTitle(self, _("AZPlayConfig"))
         self.title = _("AZPlay - Config")
