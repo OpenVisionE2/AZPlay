@@ -154,6 +154,7 @@ AZPlay_SKIN3 = """
         </screen>
         """
 
+
 class AZPlayScreen(Screen):
     skin = """
         <screen position="center,center" size="710,420" title="AZPlay">
