@@ -3,39 +3,33 @@
 from __future__ import print_function
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
-from Screens.ServiceScan import ServiceScan
 from Screens.MessageBox import MessageBox
 from Components.Label import Label
-from Components.TuneTest import Tuner
 from Components.ConfigList import ConfigListScreen
 from Components.ProgressBar import ProgressBar
 from Components.Pixmap import Pixmap
 from Components.Sources.StaticText import StaticText
 from Components.ActionMap import NumberActionMap, ActionMap
-from Components.NimManager import nimmanager, getConfigSatlist
-from Components.config import config, ConfigSubsection, ConfigSelection, ConfigYesNo, ConfigInteger, getConfigListEntry, ConfigSlider, ConfigEnableDisable
-from Tools.HardwareInfo import HardwareInfo
-from Tools.Directories import resolveFilename
-from enigma import eTimer, eDVBFrontendParametersSatellite, eDVBFrontendParameters, eComponentScan, eDVBSatelliteEquipmentControl, eDVBFrontendParametersTerrestrial, eDVBFrontendParametersCable, eConsoleAppContainer, eDVBResourceManager, getDesktop
+from Components.NimManager import nimmanager
+from enigma import eTimer, eDVBResourceManager, getBoxType
 import time
 from Components.FileList import FileList
 import re
 import os
 import sys
-from os import system, listdir, statvfs, popen, makedirs, stat, major, minor, path, access
-from Components.AVSwitch import AVSwitch
-from Components.SystemInfo import SystemInfo
+from os import system, listdir, popen, stat, path
 from Components.Console import Console
 import datetime
 import os.path
 from Tools.LoadPixmap import LoadPixmap
 from Components.Sources.List import List
 from enigma import *
-from Components.config import configfile, getConfigListEntry, ConfigEnableDisable, ConfigYesNo, ConfigText, ConfigDateTime, ConfigClock, ConfigNumber, ConfigSelectionNumber, ConfigSelection, config, ConfigSubsection, ConfigSubList, ConfigSubDict, ConfigIP, ConfigSlider, ConfigDirectory, ConfigInteger
+from Components.config import configfile, getConfigListEntry, ConfigEnableDisable, ConfigYesNo, ConfigText, ConfigSelection, config, ConfigSubsection
 from os.path import isdir as os_path_isdir
 from Components.MenuList import MenuList
 from Components.VolumeControl import VolumeControl
-from Tools.Directories import resolveFilename, SCOPE_ACTIVE_SKIN
+
+model = getBoxType()
 
 config.AZPlay = ConfigSubsection()
 config.AZPlay.lastDir = ConfigText(default='/')
@@ -303,12 +297,11 @@ class AZPlayScreen(Screen):
         self['text'].hide()
         self['text1'].hide()
         self['text2'].show()
-        hw_type = HardwareInfo().get_device_name()
-        if hw_type == 'minime' or hw_type == 'me':
+        if model == 'azboxminime' or model == 'azboxme':
             self.cmdA = 'rmfp_player -dram 0 -ve 0 -vd 0 -ae 0 -no_disp -prebuf 256 -resetvcxo '
             self.cmdV = 'rmfp_player -dram 0 -ve 0 -vd 0 -ae 0 -no_disp -resetvcxo -subs_res 1080 -forced_font /usr/share/fonts/' + config.AZPlay.ExtSub_FontSel.value + ' '
             self.cmdV0 = 'rmfp_player -dram 0 -ve 0 -vd 0 -ae 0 -no_disp -resetvcxo -no_close -oscaler spu -subs_res 1080 -yuv_palette_subs '
-        if hw_type == 'elite' or hw_type == 'premium' or hw_type == 'premium+' or hw_type == 'ultra':
+        else:
             self.cmdA = 'rmfp_player -dram 1 -ve 1 -vd 0 -ae 0 -no_disp -prebuf 256 -resetvcxo '
             self.cmdV = 'rmfp_player -dram 1 -ve 1 -vd 0 -ae 0 -no_disp -resetvcxo -subs_res 1080 -forced_font /usr/share/fonts/' + config.AZPlay.ExtSub_FontSel.value + ' '
             self.cmdV0 = 'rmfp_player -dram 1 -ve 1 -vd 0 -ae 0 -no_disp -resetvcxo -no_close -oscaler spu -subs_res 1080 -yuv_palette_subs '
@@ -1943,9 +1936,5 @@ def menu(menuid, **kwargs):
 
 
 def Plugins(path, **kwargs):
-    hw_type = HardwareInfo().get_device_name()
-    if hw_type == 'minime' or hw_type == 'me' or hw_type == 'elite' or hw_type == 'premium' or hw_type == 'premium+' or hw_type == 'ultra':
-        plugin_list = [PluginDescriptor(name=_('AZPlay'), description='Play back media files', where=PluginDescriptor.WHERE_PLUGINMENU, needsRestart=False, fnc=main), PluginDescriptor(name=_('AZPlay'), where=PluginDescriptor.WHERE_MENU, fnc=menu)]
-    else:
-        plugin_list = []
+    plugin_list = [PluginDescriptor(name=_('AZPlay'), description='Play back media files', where=PluginDescriptor.WHERE_PLUGINMENU, needsRestart=False, fnc=main), PluginDescriptor(name=_('AZPlay'), where=PluginDescriptor.WHERE_MENU, fnc=menu)]
     return plugin_list
