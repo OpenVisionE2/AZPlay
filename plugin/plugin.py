@@ -11,7 +11,7 @@ from Components.Pixmap import Pixmap
 from Components.Sources.StaticText import StaticText
 from Components.ActionMap import NumberActionMap, ActionMap
 from Components.NimManager import nimmanager
-from enigma import eTimer, eDVBResourceManager, getBoxType
+from enigma import eTimer, eDVBResourceManager
 import time
 from Components.FileList import FileList
 import re
@@ -28,8 +28,9 @@ from Components.config import configfile, getConfigListEntry, ConfigEnableDisabl
 from os.path import isdir as os_path_isdir
 from Components.MenuList import MenuList
 from Components.VolumeControl import VolumeControl
+from Components.SystemInfo import BoxInfo
 
-model = getBoxType()
+model = BoxInfo.getItem("model")
 
 config.AZPlay = ConfigSubsection()
 config.AZPlay.lastDir = ConfigText(default='/')
