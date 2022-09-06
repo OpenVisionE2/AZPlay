@@ -117,10 +117,10 @@ config.AZPlay.ExtSub_FontSel = ConfigSelection(choices=scriptliste, default='nms
 
 AZPlay_SKIN1 = """
         <screen position="center,570" size="1220,60" title="" flags="wfNoBorder" backgroundColor="transparent" >
-            <widget name="infoA" position="10,10" zPosition="2" size="1200,45" font="Regular;46" foregroundColor="#ffffff" transparent="0" halign="center" valign="center" />
-            <widget name="infoB" position="10,70" zPosition="2" size="1200,45" font="Regular;46" foregroundColor="#ffffff" transparent="1" halign="center" valign="center" />
-            <widget name="infoC" position="10,130" zPosition="2" size="1200,45" font="Regular;46" foregroundColor="#ffffff" transparent="1" halign="center" valign="center" />
-            <widget name="infoD" position="10,5" zPosition="2" size="700,15" font="Regular;15" foregroundColor="#aaaaaa" transparent="1" halign="center" valign="center" />
+            <widget name="infoA" position="10,10" zPosition="2" size="1200,45" font="Regular;46" foregroundColor="#ffffff" transparent="0" horizontalAlignment="center" verticalAlignment="center" />
+            <widget name="infoB" position="10,70" zPosition="2" size="1200,45" font="Regular;46" foregroundColor="#ffffff" transparent="1" horizontalAlignment="center" verticalAlignment="center" />
+            <widget name="infoC" position="10,130" zPosition="2" size="1200,45" font="Regular;46" foregroundColor="#ffffff" transparent="1" horizontalAlignment="center" verticalAlignment="center" />
+            <widget name="infoD" position="10,5" zPosition="2" size="700,15" font="Regular;15" foregroundColor="#aaaaaa" transparent="1" horizontalAlignment="center" verticalAlignment="center" />
         </screen>
         """
 
@@ -128,22 +128,22 @@ AZPlay_SKIN2 = """
         <screen position="center,390" size="760,200" title="" flags="wfNoBorder" zPosition="-1" >
             <widget name="pozadina" position="0,0" size="760,200" zPosition="1" />
             <widget name="media_progress" position="45,150" size="670,15" zPosition="2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/AZPlay/img/progress_big3.png" backgroundColor="#333333" />
-            <widget name="infoA" position="45,175" zPosition="2" size="150,15" font="Regular;14" foregroundColor="#ffffff" transparent="1" halign="left" valign="center" />
-            <widget name="infoB" position="643,175" zPosition="2" size="72,15" font="Regular;14" foregroundColor="#ffffff" transparent="1" halign="right" valign="center" />
-            <widget name="infoC" position="45,42" zPosition="2" size="670,30" font="Regular;26" foregroundColor="#ffffff" transparent="1" halign="left" valign="center" />
-            <widget name="infoD" position="45,85" zPosition="2" size="335,25" font="Regular;18" foregroundColor="#aaaaaa" transparent="1" halign="left" valign="center" />
-            <widget name="infoE" position="380,85" zPosition="2" size="335,25" font="Regular;18" foregroundColor="#aaaaaa" transparent="1" halign="right" valign="center" />
-            <widget name="infoF" position="45,118" zPosition="2" size="335,25" font="Regular;18" foregroundColor="#aaaaaa" transparent="1" halign="left" valign="center" />
-            <widget name="infoG" position="380,118" zPosition="2" size="335,25" font="Regular;18" foregroundColor="#aaaaaa" transparent="1" halign="right" valign="center" />
+            <widget name="infoA" position="45,175" zPosition="2" size="150,15" font="Regular;14" foregroundColor="#ffffff" transparent="1" horizontalAlignment="left" verticalAlignment="center" />
+            <widget name="infoB" position="643,175" zPosition="2" size="72,15" font="Regular;14" foregroundColor="#ffffff" transparent="1" horizontalAlignment="right" verticalAlignment="center" />
+            <widget name="infoC" position="45,42" zPosition="2" size="670,30" font="Regular;26" foregroundColor="#ffffff" transparent="1" horizontalAlignment="left" verticalAlignment="center" />
+            <widget name="infoD" position="45,85" zPosition="2" size="335,25" font="Regular;18" foregroundColor="#aaaaaa" transparent="1" horizontalAlignment="left" verticalAlignment="center" />
+            <widget name="infoE" position="380,85" zPosition="2" size="335,25" font="Regular;18" foregroundColor="#aaaaaa" transparent="1" horizontalAlignment="right" verticalAlignment="center" />
+            <widget name="infoF" position="45,118" zPosition="2" size="335,25" font="Regular;18" foregroundColor="#aaaaaa" transparent="1" horizontalAlignment="left" verticalAlignment="center" />
+            <widget name="infoG" position="380,118" zPosition="2" size="335,25" font="Regular;18" foregroundColor="#aaaaaa" transparent="1" horizontalAlignment="right" verticalAlignment="center" />
         </screen>
         """
 
 AZPlay_SKIN3 = """
         <screen position="center,510" size="1220,180" title="" flags="wfNoBorder" >
-            <widget name="infoA" position="10,10" zPosition="2" size="1200,45" font="Regular;46" foregroundColor="#ffffff" transparent="0" halign="center" valign="center" />
-            <widget name="infoB" position="10,70" zPosition="2" size="1200,45" font="Regular;46" foregroundColor="#ffffff" transparent="1" halign="center" valign="center" />
-            <widget name="infoC" position="10,130" zPosition="2" size="1200,45" font="Regular;46" foregroundColor="#ffffff" transparent="1" halign="center" valign="center" />
-            <widget name="infoD" position="10,5" zPosition="2" size="700,15" font="Regular;15" foregroundColor="#aaaaaa" transparent="1" halign="center" valign="center" />
+            <widget name="infoA" position="10,10" zPosition="2" size="1200,45" font="Regular;46" foregroundColor="#ffffff" transparent="0" horizontalAlignment="center" verticalAlignment="center" />
+            <widget name="infoB" position="10,70" zPosition="2" size="1200,45" font="Regular;46" foregroundColor="#ffffff" transparent="1" horizontalAlignment="center" verticalAlignment="center" />
+            <widget name="infoC" position="10,130" zPosition="2" size="1200,45" font="Regular;46" foregroundColor="#ffffff" transparent="1" horizontalAlignment="center" verticalAlignment="center" />
+            <widget name="infoD" position="10,5" zPosition="2" size="700,15" font="Regular;15" foregroundColor="#aaaaaa" transparent="1" horizontalAlignment="center" verticalAlignment="center" />
         </screen>
         """
 
@@ -151,17 +151,17 @@ AZPlay_SKIN3 = """
 class AZPlayScreen(Screen):
     skin = """
         <screen position="center,center" size="710,420" title="AZPlay">
-            <ePixmap pixmap="buttons/red.png" position="10,380" size="140,40" alphatest="on" />
-            <ePixmap pixmap="buttons/green.png" position="193,380" size="140,40" alphatest="on" />
-            <ePixmap pixmap="buttons/yellow.png" position="376,380" size="140,40" alphatest="on" />
-            <ePixmap pixmap="buttons/blue.png" position="559,380" size="140,40" alphatest="on" />
-            <widget source="key_red" render="Label" position="10,380" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#9f1313" transparent="1"/>
-            <widget source="key_green" render="Label" position="193,380" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#1f771f" transparent="1"/>
-            <widget source="key_yellow" render="Label" position="376,380" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#a08500" transparent="1"/>
-            <widget source="key_blue" render="Label" position="559,380" zPosition="1" size="140,40" font="Regular;14" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#18188b" transparent="1"/>
-            <widget name="text" position="0,5" font="Regular;20" size="710,24" halign="center" />
-            <widget name="text1" position="0,345" font="Regular;16" size="710,24" halign="center" />
-            <widget name="text2" position="0,175" font="Regular;24" size="710,60" halign="center" />
+            <ePixmap pixmap="buttons/red.png" position="10,380" size="140,40" alphaTest="on" />
+            <ePixmap pixmap="buttons/green.png" position="193,380" size="140,40" alphaTest="on" />
+            <ePixmap pixmap="buttons/yellow.png" position="376,380" size="140,40" alphaTest="on" />
+            <ePixmap pixmap="buttons/blue.png" position="559,380" size="140,40" alphaTest="on" />
+            <widget source="key_red" render="Label" position="10,380" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" foregroundColor="#ffffff" backgroundColor="#9f1313" transparent="1"/>
+            <widget source="key_green" render="Label" position="193,380" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" foregroundColor="#ffffff" backgroundColor="#1f771f" transparent="1"/>
+            <widget source="key_yellow" render="Label" position="376,380" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" foregroundColor="#ffffff" backgroundColor="#a08500" transparent="1"/>
+            <widget source="key_blue" render="Label" position="559,380" zPosition="1" size="140,40" font="Regular;14" horizontalAlignment="center" verticalAlignment="center" foregroundColor="#ffffff" backgroundColor="#18188b" transparent="1"/>
+            <widget name="text" position="0,5" font="Regular;20" size="710,24" horizontalAlignment="center" />
+            <widget name="text1" position="0,345" font="Regular;16" size="710,24" horizontalAlignment="center" />
+            <widget name="text2" position="0,175" font="Regular;24" size="710,60" horizontalAlignment="center" />
             <widget name="start_progress" position="45,150" size="620,15" zPosition="2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/AZPlay/img/progress_big3.png" backgroundColor="#333333" />
             <widget name="list_left" position="5,35" size="700,295" scrollbarMode="showOnDemand" />
         </screen>
@@ -1556,11 +1556,11 @@ class AZInfoBar(Screen):
 class LoadSub(Screen):
     skin = """
         <screen position="center,center" size="710,390" title="AZPlay - Load Subtitle">
-            <ePixmap pixmap="buttons/red.png" position="10,350" size="140,40" alphatest="on" />
-            <ePixmap pixmap="buttons/green.png" position="560,350" size="140,40" alphatest="on" />
-            <widget source="key_red" render="Label" position="10,350" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1"/>
-            <widget source="key_green" render="Label" position="560,350" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" foregroundColor="#ffffff" transparent="1"/>
-            <widget name="text" position="0,5" font="Regular;20" size="710,24" halign="center" />
+            <ePixmap pixmap="buttons/red.png" position="10,350" size="140,40" alphaTest="on" />
+            <ePixmap pixmap="buttons/green.png" position="560,350" size="140,40" alphaTest="on" />
+            <widget source="key_red" render="Label" position="10,350" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1"/>
+            <widget source="key_green" render="Label" position="560,350" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#1f771f" foregroundColor="#ffffff" transparent="1"/>
+            <widget name="text" position="0,5" font="Regular;20" size="710,24" horizontalAlignment="center" />
             <widget name="list_left" position="5,45" size="700,295" scrollbarMode="showOnDemand" />
         </screen>
         """
@@ -1613,11 +1613,11 @@ class LoadSub(Screen):
 class AZPlayConfig(ConfigListScreen, Screen):
     skin = """
         <screen position="center,center" size="710,275" title="AZPlay - Config" >
-            <ePixmap pixmap="buttons/red.png" position="10,230" size="140,40" transparent="1" alphatest="on" />
-            <ePixmap pixmap="buttons/green.png" position="560,230" size="140,40" transparent="1" alphatest="on" />
-            <widget source="key_red" render="Label" position="10,230" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
-            <widget source="key_green" render="Label" position="560,230" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
-            <widget source="poraka" render="Label" position="150,230" zPosition="1" size="400,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
+            <ePixmap pixmap="buttons/red.png" position="10,230" size="140,40" transparent="1" alphaTest="on" />
+            <ePixmap pixmap="buttons/green.png" position="560,230" size="140,40" transparent="1" alphaTest="on" />
+            <widget source="key_red" render="Label" position="10,230" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#9f1313" transparent="1" />
+            <widget source="key_green" render="Label" position="560,230" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#9f1313" transparent="1" />
+            <widget source="poraka" render="Label" position="150,230" zPosition="1" size="400,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#9f1313" transparent="1" />
             <widget name="config" position="10,10" size="690,210" scrollbarMode="showOnDemand" />
         </screen>
         """
@@ -1781,11 +1781,11 @@ class AZPlayConfig(ConfigListScreen, Screen):
 class AZPlaySelectLang(ConfigListScreen, Screen):
     skin = """
         <screen position="center,center" size="710,275" title="AZPlay - Language Select" >
-            <ePixmap pixmap="buttons/red.png" position="10,230" size="140,40" transparent="1" alphatest="on" />
-            <ePixmap pixmap="buttons/green.png" position="560,230" size="140,40" transparent="1" alphatest="on" />
-            <widget source="key_red" render="Label" position="10,230" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
-            <widget source="key_green" render="Label" position="560,230" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
-            <widget source="poraka" render="Label" position="150,230" zPosition="1" size="400,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
+            <ePixmap pixmap="buttons/red.png" position="10,230" size="140,40" transparent="1" alphaTest="on" />
+            <ePixmap pixmap="buttons/green.png" position="560,230" size="140,40" transparent="1" alphaTest="on" />
+            <widget source="key_red" render="Label" position="10,230" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#9f1313" transparent="1" />
+            <widget source="key_green" render="Label" position="560,230" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#9f1313" transparent="1" />
+            <widget source="poraka" render="Label" position="150,230" zPosition="1" size="400,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#9f1313" transparent="1" />
             <widget name="list" position="10,10" size="690,210" scrollbarMode="showOnDemand" />
         </screen>
         """
@@ -1851,11 +1851,11 @@ class AZPlaySelectLang(ConfigListScreen, Screen):
 class AZPlaySelectSub(ConfigListScreen, Screen):
     skin = """
         <screen position="center,center" size="710,275" title="AZPlay - Subtitle Select" >
-            <ePixmap pixmap="buttons/red.png" position="10,230" size="140,40" transparent="1" alphatest="on" />
-            <ePixmap pixmap="buttons/green.png" position="560,230" size="140,40" transparent="1" alphatest="on" />
-            <widget source="key_red" render="Label" position="10,230" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
-            <widget source="key_green" render="Label" position="560,230" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
-            <widget source="poraka" render="Label" position="150,230" zPosition="1" size="400,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
+            <ePixmap pixmap="buttons/red.png" position="10,230" size="140,40" transparent="1" alphaTest="on" />
+            <ePixmap pixmap="buttons/green.png" position="560,230" size="140,40" transparent="1" alphaTest="on" />
+            <widget source="key_red" render="Label" position="10,230" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#9f1313" transparent="1" />
+            <widget source="key_green" render="Label" position="560,230" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#9f1313" transparent="1" />
+            <widget source="poraka" render="Label" position="150,230" zPosition="1" size="400,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#9f1313" transparent="1" />
             <widget name="list" position="10,10" size="690,210" scrollbarMode="showOnDemand" />
         </screen>
         """
